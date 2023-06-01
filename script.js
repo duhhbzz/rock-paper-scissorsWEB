@@ -87,3 +87,5 @@ function game() {
     console.log(`Final Scores - Player: ${playerScore} | Computer: ${cpuScore}`);
     console.log(`Winner: ${winner}`);
   }
+
+  game();
