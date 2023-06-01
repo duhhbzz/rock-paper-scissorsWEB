@@ -55,7 +55,35 @@ function playRound(playerSelection, cpuSelection) {
     }
 }
 
-// testing
-const playerSelection = "Spock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    let playerScore = 0;
+    let cpuScore = 0;
+  
+    while (playerScore < 5 && cpuScore < 5) {
+      let playerChoice = prompt("Select one: Rock, Paper, Scissors, Lizard, or Spock: ");
+      let cpuChoice = getComputerChoice();
+      let outcome = playRound(playerChoice, cpuChoice);
+  
+      if (outcome.startsWith("You win!")) {
+        playerScore++;
+      }
+  
+      if (outcome.startsWith("You lose!")) {
+        cpuScore++;
+      }
+  
+      console.log(outcome);
+    }
+  
+    let winner;
+    if (playerScore === 5) {
+      winner = "Player";
+    }
+  
+    if (cpuScore === 5) {
+      winner = "Computer";
+    }
+  
+    console.log(`Final Scores - Player: ${playerScore} | Computer: ${cpuScore}`);
+    console.log(`Winner: ${winner}`);
+  }
